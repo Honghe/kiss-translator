@@ -1337,7 +1337,11 @@ export class Translator {
 
       // 文本节点
       if (node.nodeType === Node.TEXT_NODE) {
-        let text = node.textContent;
+        let text = node.textContent
+          .split("\n")
+          .map((line) => line.trim())
+          .filter((line) => line.length > 0)
+          .join(" ");
 
         // 专业术语替换
         if (this.#combinedTermsRegex) {
@@ -1411,7 +1415,7 @@ export class Translator {
       return tag;
     }
 
-    const processedString = nodes.map(traverse).join("").trim();
+    const processedString = nodes.map(traverse).join(" ").trim();
 
     return [processedString, placeholderMap];
   }
