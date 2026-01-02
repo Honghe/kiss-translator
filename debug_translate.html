@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            body {
+                max-width: 800px;
+                /* 你可以根据需要调整宽度 */
+                padding: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p style="-webkit-line-clamp: unset; max-height: none; height: auto">
+            This is a proposal for asynchronous I/O in Python 3, starting at
+            Python 3.3. Consider this the concrete proposal that is missing from
+            <a
+                class="pep reference internal"
+                href="../pep-3153/"
+                title="PEP 3153 – Asynchronous IO support"
+                >PEP 3153</a
+            >. The proposal includes a pluggable event loop, transport and
+            protocol abstractions similar to those in Twisted, and a
+            higher-level scheduler based on
+            <code class="docutils literal notranslate"
+                ><span class="pre">yield</span>
+                <span class="pre">from</span></code
+            >
+            (<a
+                class="pep reference internal"
+                href="../pep-0380/"
+                title="PEP 380 – Syntax for Delegating to a Subgenerator"
+                >PEP 380</a
+            >). The proposed package name is
+            <code class="docutils literal notranslate"
+                ><span class="pre">asyncio</span></code
+            >.
+        </p>
+        <p style="-webkit-line-clamp: unset; max-height: none; height: auto">
+            Because
+            <a
+                href="https://github.com/WebAssembly/multi-value/blob/master/proposals/multi-value/Overview.md"
+                >multi-value</a
+            >
+            is still in an experimental state in the Wasm ecosystem, you will
+            likely not pass structs with Wasm. Anything more complicated than
+            scalars will require pointers and copying data in and out of Wasm
+            linear memory. This involves the usual trap that catches nearly
+            everyone: Wasm interfaces make no distinction between pointers and
+            integers, and Wasm runtimes interpret generally interpret all
+            integers as signed. What that means is
+            <strong>your pointers are signed unless you take action</strong>.
+            Addresses start at 0, so this is bad, bad news.
+        </p>
+        <p style="-webkit-line-clamp: unset; max-height: none; height: auto">
+            In iOS 26.2 and later, browser engines other than WebKit can be used
+            in two types of apps for users in Japan: Dedicated browser apps that
+            provide a full web browser experience, and apps from browser engine
+            stewards that provide in-app browsing experiences using an embedded
+            browser engine.
+        </p>
+    </body>
+</html>

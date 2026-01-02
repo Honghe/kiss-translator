@@ -1392,8 +1392,8 @@ export class Translator {
           Translator.TAGS.WARP.has(node.tagName?.toUpperCase())
         ) {
           wrapCounter++;
-          const startPlaceholder = `<${this.#placeholder.tagName} id='${wrapCounter}'>`;
-          const endPlaceholder = `</${this.#placeholder.tagName}>`;
+          const startPlaceholder = `<${node.localName} id='${wrapCounter}'>`;
+          const endPlaceholder = `</${node.localName}>`;
           placeholderMap.set(startPlaceholder, buildOpeningTag(node));
           placeholderMap.set(endPlaceholder, `</${node.localName}>`);
           return `${startPlaceholder}${innerContent}${endPlaceholder}`;
