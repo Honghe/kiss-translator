@@ -490,7 +490,7 @@ export class Translator {
       this.#placeholder.startDelimiter
     );
     const escapedEnd = Translator.escapeRegex(this.#placeholder.endDelimiter);
-    const patternString = `(${escapedStart}\\d+${escapedEnd}|<\\/?\\w+\\d+>)`;
+    const patternString = `(${escapedStart}\\d+${escapedEnd}|<\\w+ id="\\d+">|<\\/\\w+>)`;
     const flags = "g";
     return new RegExp(patternString, flags);
   }
@@ -1392,8 +1392,8 @@ export class Translator {
           Translator.TAGS.WARP.has(node.tagName?.toUpperCase())
         ) {
           wrapCounter++;
-          const startPlaceholder = `<${this.#placeholder.tagName}${wrapCounter}>`;
-          const endPlaceholder = `</${this.#placeholder.tagName}${wrapCounter}>`;
+          const startPlaceholder = `<${this.#placeholder.tagName} id="${wrapCounter}">`;
+          const endPlaceholder = `</${this.#placeholder.tagName}>`;
           placeholderMap.set(startPlaceholder, buildOpeningTag(node));
           placeholderMap.set(endPlaceholder, `</${node.localName}>`);
           return `${startPlaceholder}${innerContent}${endPlaceholder}`;
