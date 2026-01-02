@@ -22,6 +22,8 @@ const extWebpack = (config, env) => {
     minifyCSS: true,
     minifyURLs: true,
   };
+  config.optimization.minimize = false; // 禁止 JS 压缩
+  config.devtool = "inline-source-map";
   const names = [
     "HtmlWebpackPlugin",
     "WebpackManifestPlugin",
