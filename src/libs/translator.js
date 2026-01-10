@@ -490,7 +490,7 @@ export class Translator {
       this.#placeholder.startDelimiter
     );
     const escapedEnd = Translator.escapeRegex(this.#placeholder.endDelimiter);
-    const patternString = `(${escapedStart}\\d+${escapedEnd}|<\\w+ id='\\d+'>|<\\/\\w+>)`;
+    const patternString = `(${escapedStart}\\d+${escapedEnd}|<\\w+ id="\\d+">|<\\/\\w+>)`;
     const flags = "g";
     return new RegExp(patternString, flags);
   }
@@ -1379,7 +1379,8 @@ export class Translator {
             node.style.width = `${node.offsetWidth}px`;
             node.style.height = `${node.offsetHeight}px`;
           }
-          return pushReplace(node.outerHTML);
+          // return pushReplace(node.outerHTML);
+          return node.outerHTML;
         }
 
         let innerContent = "";
@@ -1392,7 +1393,7 @@ export class Translator {
           Translator.TAGS.WARP.has(node.tagName?.toUpperCase())
         ) {
           wrapCounter++;
-          const startPlaceholder = `<${node.localName} id='${wrapCounter}'>`;
+          const startPlaceholder = `<${node.localName} id="${wrapCounter}">`;
           const endPlaceholder = `</${node.localName}>`;
           placeholderMap.set(startPlaceholder, buildOpeningTag(node));
           placeholderMap.set(endPlaceholder, `</${node.localName}>`);
