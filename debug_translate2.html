@@ -11,14 +11,24 @@
 </head>
 
 <body>
+  <p>start</p>
   <p>
     <a data-primary="HTTP requests" data-secondary="query parameters" data-type="indexterm" id="icd017"></a><em>Query
-      parameters</em><a data-primary="query parameters" data-type="indexterm" id="icd018"></a> are the 
+      parameters</em><a data-primary="query parameters" data-type="indexterm" id="icd018"></a> are the
     <code><em>name=value</em></code> strings after the <code>?</code> in a URL, separated by <code>&amp;</code>
     characters. Edit <em>hello.py</em> again in <a data-type="xref" href="#ex-3-15">Example&#160;3-15</a>.
   </p>
   <p><em>Query parameters</em> are the <code><em>name=value</em></code> strings after the <code>?</code> in a URL,
     separated by <code>&amp;</code> characters. Edit <em>hello.py</em> again in <a id=6>Example&nbsp;3-15</a>.</p>
-</body>
+
+    <p><code>objsize</code> has a simple and robust implementation with significantly
+    fewer lines of code, compared to <code>pympler</code>. The Pympler
+    implementation uses recursion, and thus have to use a maximal depth
+    argument to avoid reaching Python’s max depth. <code>objsize</code>, however,
+    uses BFS which is more efficient and simple to follow. Moreover, the
+    Pympler implementation carefully takes care of any object type.
+    <code>objsize</code> archives the same goal with a simple and generic
+    implementation, which has fewer lines of code.</p>
+  </body>
 
 </html>
