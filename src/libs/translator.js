@@ -2421,7 +2421,7 @@ overflow-wrap: anywhere !important;`;
         }
 
         // 换行符替换
-        text = text.replace(/\r?\n/g, () => pushReplace(`&#10;`));
+        text = text.replace(/\r?\n/g, " ");
 
         return escapeHTML(text);
       }
@@ -3185,8 +3185,6 @@ overflow-wrap: anywhere !important;`;
     if (this.#rule.transTitle === "true") {
       this.#translateTitle();
     }
-
-    isExt && sendBgMsg(MSG_UPDATE_ICON, true);
   }
 
   // 翻译页面标题
@@ -3219,8 +3217,6 @@ overflow-wrap: anywhere !important;`;
     if (this.#rule.transTitle === "true" && this.#docInfo.title) {
       document.title = this.#docInfo.title;
     }
-
-    isExt && sendBgMsg(MSG_UPDATE_ICON, false);
   }
 
   // 重新扫描页面
